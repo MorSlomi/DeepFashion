@@ -23,10 +23,10 @@ As you can see, my dataset is small and there are not enough images in order to 
 I created a new model. The new model is based on the pre-trained model (VGG16 without the top layer). On top of it I added a fully connected layer, a batch normalization layer, a dropout layer and a softmax layer with three outputs (as the number of classes).
 In addition, I preformed data augmentation, which is a technique that can be used to artificially expand the size of a training dataset by creating modified versions of images in the dataset. Commom techniques of data augmentation include rotation, zooming, cropping, flipping, etc. The techniques I used are rescale, shifting the picture a few pixels, shearing, zooming and fliping.
 Next, I trained the model with the following hyperparameters:
-           * Training batch size = 30
-           * Validation batch size = 21
-           * Epochs = 45
-           * 'Adam' optimizer with learning rate = 1e-5 and momentum = 0.99
+* Training batch size = 30
+* Validation batch size = 21
+* Epochs = 45
+* 'Adam' optimizer with learning rate = 1e-5 and momentum = 0.99
 
 
 
