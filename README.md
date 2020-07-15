@@ -48,14 +48,16 @@ The validation loss is: 0.119
 
 **Confusion Matrix:**
 If we take a look at the confusion matrix, we will find out that the only error is between bottem and top:
+
 ![Confusion_matrix](<Evaluation_Images/DeepFashionVGG16_confusion_matrix.jpg>)
 
 
 Here's an example of the predicted labels vs. the real labels for a few images:
+
 ![predicted_images](<Evaluation_Images/DeepFashionVGG16_predicted_imgs.jpg>)
 
 
 
-##Future Work
+## Future Work
 In the near future, my intention is to add more images and insert them as testset.
 In addition, I am thinking to add more images of different classes of clothes (as dresses, coats, jumpers, etc).
