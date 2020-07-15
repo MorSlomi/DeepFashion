@@ -36,8 +36,8 @@ Next, I trained the model with the following hyperparameters:
 ## Evaluation 
 In order to evatuate the model I created learning curves:
 
-![Learning Curves - Accuracy](<Evaluation_Images/Curves1.jpg>)
-![Learning Curves - Accuracy](<Evaluation_Images/Curves2.jpg>)
+![Learning Curves - Accuracy](<Evaluation_Images/DeepFashionVGG16CurvesAcc.jpg>)
+![Learning Curves - Accuracy](<Evaluation_Images/DeepFashionVGG16CurvesLoss.jpg>)
 
 
 
@@ -47,11 +47,11 @@ The validation loss is: 0.119
 
 **Confusion Matrix:**
 If we take a look at the confusion matrix, we will find out that the only error is between bottem and top:
-![Confusion_matrix](<Evaluation_Images/Confusion_matrix.jpg>)
+![Confusion_matrix](<Evaluation_Images/DeepFashionVGG16_confusion_matrix.jpg>)
 
 
 Here's an example of the predicted labels vs. the real labels for a few images:
-![predicted_images](<Evaluation_Images/predicted_images.jpg>)
+![predicted_images](<Evaluation_Images/DeepFashionVGG16_predicted_images.jpg>)
 
 
 
