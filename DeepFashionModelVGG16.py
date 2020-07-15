@@ -19,12 +19,13 @@ import seaborn as sns
 import pandas as pd
 import cv2
 import glob
+from keras.utils import plot_model
 
 #Inserting all images path into a list
-def read_img_file_name(train_path, class_lables):
+def read_img_file_name(path, class_lables):
   images = []
   for class_lable in class_lables:
-    images.append(glob.glob(train_path + class_lable + '/*.jpg'))
+    images.append(glob.glob(path + class_lable + '/*.jpg'))
   images = [val for sublist in images for val in sublist]
   return images
 
@@ -80,7 +81,8 @@ def data_aug(train_path, validation_path, batch_size,batch_size_val, shift_fract
 # Fine-tune the model - Training 
 def fit_model(model, batches, val_batches, batch_size,batch_size_val,epochs):
   history = model.fit_generator(batches, steps_per_epoch=len(batches.filenames)//batch_size, epochs=epochs,validation_data=val_batches,
-                                                    validation_steps=len(val_batches.filenames)//batch_size_val)
+                                                    validation_steps=len(val_batches.filenames)//batch_size_val
+                                ,max_queue_size=8, workers=4)
   score = model.evaluate_generator(val_batches,steps=len(val_batches.filenames)//batch_size_val, verbose=0)
   return model, history, score
 
@@ -110,15 +112,15 @@ def confusion_mat(model,Y_pred, testY_labels, class_labels):
   y_pred = np.argmax(Y_pred, axis=1)
   confusion_mat = confusion_matrix(testY_labels, y_pred)
   classification_rep = classification_report(testY_labels, y_pred, target_names=class_labels)
-  plt.figure(figsize=(10,7))
+  plt.figure(figsize=(6,4))
   df_confusion_mat = pd.DataFrame(confusion_mat)
   sns.heatmap(df_confusion_mat, annot_kws={"size": 10}, linewidths=.5, cmap='PuBu', annot=True,
             yticklabels=class_labels, xticklabels=class_labels, fmt='g')
   plt.xticks(rotation=40) 
   plt.ylabel('True label')
   plt.xlabel('Predicted label')
-  confusion_mat_plt = plt
-  return  confusion_mat_plt, classification_rep
+  plt.savefig('/content/drive/My Drive/FashionAI/DeepFashionVGG16_confusion_matrix.jpg')
+  return  plt, classification_rep
 
 def plot_image(i, predictions_array, true_label, img, class_labels):
   img = cv2.imread(img[i])
@@ -144,12 +146,30 @@ def predicted_imgs(Y_pred, testY_labels, testX_img, class_labels, plt_num_rows, 
   for i in range(num_images):
     plt.subplot(plt_num_rows, 2*plt_num_cols, 2*i+1)
     plot_image(i, Y_pred[i], testY_labels, testX_img, class_labels)
+  plt.savefig('/content/drive/My Drive/FashionAI/DeepFashionVGG16_predicted_imgs.jpg')
+  plt.show()
+
+def presenting_imgs_example(path, plt_num_rows, plt_num_cols):
+  images = glob.glob(path + '/*.jpg')
+  num_images = plt_num_rows*plt_num_cols
+  plt.figure(figsize=(plt_num_cols, plt_num_rows))
+  for i in range(num_images):
+    plt.subplot(plt_num_rows, plt_num_cols, i+1)
+    img = cv2.imread(images[i])
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+   # true_label = true_label[i]
+   # plt.xlabel(class_labels[true_label], color=color,fontsize=10)
+    plt.grid(False)
+    plt.xticks([])
+    plt.yticks([])
+    plt.imshow(img)
+    plt.savefig('/content/drive/My Drive/FashionAI/DeepFashionVGG16_presenting_imgs.jpg')
   plt.show()
 
 #Drive data
 #from google.colab import drive
 #drive.mount('/content/drive')
-
+example_images_path = "/content/drive/My Drive/FashionAI/example_images/"
 train_path = "/content/drive/My Drive/FashionAI/images/train/"
 validation_path = "/content/drive/My Drive/FashionAI/images/validation/"
 
@@ -163,8 +183,8 @@ DROP_RATE = 0.25
 SHIFT_FRACTION=0.2 
 LR = 1e-5
 MOMENTUM_NUM = 0.99
-PLT_NUM_ROWS = 2
-PLT_NUM_COLS = 2
+PLT_NUM_ROWS = 3
+PLT_NUM_COLS = 3
 
 # Initialize the VGG model
 vgg_conv = VGG16(weights='imagenet', include_top=False, input_shape=(IMG_R, IMG_C, 3))
@@ -180,9 +200,12 @@ for layer in vgg_conv.layers:
 # Creating the model Architecture
 model = build_model(vgg_conv, NUM_TOPICS, DROP_RATE, LR, MOMENTUM_NUM)
 # Show a summary of the model
-model.summary()
+plot_model(model, to_file='/content/drive/My Drive/FashionAI/model_summary.jpg')
 
 batches, val_batches = data_aug(train_path, validation_path, BS,BS_VAL, SHIFT_FRACTION, IMG_R, IMG_C)
+
+# Reading images paths from directory
+presenting_imgs_example(example_images_path, PLT_NUM_ROWS, PLT_NUM_COLS)
 
 model, histories, score = fit_model(model, batches, val_batches, BS, BS_VAL, EPOCHS)
 
@@ -203,7 +226,7 @@ confusion_mat, classification_rep = confusion_mat(model,Y_pred, testY_labels, CL
 
 print(classification_rep)
 
-# Reading images paths from train directory
+# Reading images paths from validation directory
 img_name = read_img_file_name(validation_path, CLASS_LABELS)
 
 # Ploting test images with their predicted labels and the true labels.
