@@ -31,7 +31,8 @@ Next, I trained the model with the following hyperparameters:
 * 'Adam' optimizer with learning rate = 1e-5 and momentum = 0.99
 
 # Evaluation 
-[Learning Curves - Accuracy](<Evaluation_Images/Curves1.jpg>)
+![Learning Curves - Accuracy](<Evaluation_Images/Curves1.jpg>)
+![Learning Curves - Accuracy](<Evaluation_Images/Curves2.jpg>)
 
 
 
