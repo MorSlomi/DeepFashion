@@ -8,7 +8,9 @@ in order to challenge myself and deal with real life data problems.
 ## Dataset 
 As mentioned, the dataset consists of images of clothes from my own closet: 50 Tops, 50 Bottems, 26 shoes (in the near future I will add more images).
 Here's an example of some images (after resizing the images 244 * 244) :
+
 ![DeepFashionVGG16_presenting_imgs](<Evaluation_Images/DeepFashionVGG16_presenting_imgs.jpg>)
+
 All images were taken from a cellphone camera.
 
 I moved the images to google drive in order to work with google colab (which enables to speed up the running time of the network with GPU).
