@@ -32,7 +32,7 @@ Next, I trained the model with the following hyperparameters:
 
 # Evaluation 
 
-
+[Contribution guidelines for this project](Evaluation_Images/Curves1.jpg)
 
 
 
