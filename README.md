@@ -1,4 +1,4 @@
-# DeepFashion
+## DeepFashion
 
 The inspiration of starting this project came from the passion I have for Technolegy & Fashion.
 The idea was to create an image classification with data that I have intrest in (my own clothes).
@@ -7,9 +7,7 @@ in order to challenge myself and deal with real life data problems.
 
 # Dataset 
 As mentioned, the dataset consists of images of clothes from my own closet: 50 Tops, 50 Bottems, 26 shoes (in the near future I will add more images).
-Here's an example how the images look:
-![Learning Curves - Accuracy](<Evaluation_Images/20200617_002544.jpg>)
-![Learning Curves - Accuracy](<Evaluation_Images/20200617_003342.jpg>)
+Here's an example how the images look (after resizing the images 244 * 244) :
 
 All images were taken from a cellphone camera.
 
