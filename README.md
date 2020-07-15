@@ -7,7 +7,7 @@ in order to challenge myself and deal with real life data problems.
 
 ## Dataset 
 As mentioned, the dataset consists of images of clothes from my own closet: 50 Tops, 50 Bottems, 26 shoes (in the near future I will add more images).
-Here's an example how the images look (after resizing the images 244 * 244) :
+Here's an example of some images (after resizing the images 244 * 244) :
 
 All images were taken from a cellphone camera.
 
