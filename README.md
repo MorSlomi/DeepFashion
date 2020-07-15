@@ -6,13 +6,12 @@ My goal of this project is to create an accurate image classifier using images o
 in order to challenge myself and deal with real life data problems.
 
 # Dataset 
-As mentioned, the dataset consists of images of clothes from my own closet: 
-            50 Tops
-            50 Bottems
-            26 shoes
+As mentioned, the dataset consists of images of clothes from my own closet: 50 Tops, 50 Bottems, 26 shoes (in the near future I will add more images).
+Here's an example how the images look:
+![Learning Curves - Accuracy](<Evaluation_Images/20200617_002544.jpg>)
+![Learning Curves - Accuracy](<Evaluation_Images/20200617_003342.jpg>)
 
 All images were taken from a cellphone camera.
-* In the near future I will add more images.
 
 I moved the images to google drive in order to work with google colab (which enables to speed up the running time of the network with GPU).
 Then separated the data into train (106 images) and validation (21 images) and kept it in the “train” and “validation” folders. 
