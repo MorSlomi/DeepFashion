@@ -28,9 +28,11 @@ Next, I trained the model with the following hyperparameters:
 * 'Adam' optimizer with learning rate = 1e-5 and momentum = 0.99
 
 ## Evaluation 
+In order to evatuate the model I created learning curves:
 ![Learning Curves - Accuracy](<Evaluation_Images/Curves1.jpg>)
 ![Learning Curves - Accuracy](<Evaluation_Images/Curves2.jpg>)
 
 
-
+The validation accuracy is
+The validation loss is 
 
