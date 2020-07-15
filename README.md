@@ -42,6 +42,7 @@ In order to evatuate the model I created learning curves:
 
 
 The validation accuracy is:0.98
+
 The validation loss is: 0.119
 
 
@@ -51,7 +52,7 @@ If we take a look at the confusion matrix, we will find out that the only error 
 
 
 Here's an example of the predicted labels vs. the real labels for a few images:
-![predicted_images](<Evaluation_Images/DeepFashionVGG16_predicted_images.jpg>)
+![predicted_images](<Evaluation_Images/DeepFashionVGG16_predicted_imgs.jpg>)
 
 
 
