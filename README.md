@@ -8,7 +8,7 @@ in order to challenge myself and deal with real life data problems.
 ## Dataset 
 As mentioned, the dataset consists of images of clothes from my own closet: 50 Tops, 50 Bottems, 26 shoes (in the near future I will add more images).
 Here's an example of some images (after resizing the images 244 * 244) :
-
+![DeepFashionVGG16_presenting_imgs](<Evaluation_Images/DeepFashionVGG16_presenting_imgs.jpg>)
 All images were taken from a cellphone camera.
 
 I moved the images to google drive in order to work with google colab (which enables to speed up the running time of the network with GPU).
@@ -18,6 +18,8 @@ As you can see, my dataset is small and there are not enough images in order to 
 
 ## Building the model
 I created a new model. The new model is based on the pre-trained model (VGG16 without the top layer). On top of it I added a fully connected layer, a batch normalization layer, a dropout layer and a softmax layer with three outputs (as the number of classes).
+![summary_model](<Evaluation_Images/summary_model.jpg>)
+
 In addition, I preformed data augmentation, which is a technique that can be used to artificially expand the size of a training dataset by creating modified versions of images in the dataset. Commom techniques of data augmentation include rotation, zooming, cropping, flipping, etc. The techniques I used are rescale, shifting the picture a few pixels, shearing, zooming and fliping.
 
 ## Training the model
