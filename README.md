@@ -34,7 +34,7 @@ Next, I trained the model with the following hyperparameters:
 
 [Learning Curves - Accuracy](Evaluation_Images/Curves1.jpg)
 
-
+![alt text](<Evaluation_Images/Curves1.jpg>)
 
 
 
