@@ -11,7 +11,7 @@ Here's an example of some images (after resizing the images 244 * 244) :
 
 ![DeepFashionVGG16_presenting_imgs](<Evaluation_Images/DeepFashionVGG16_presenting_imgs.jpg>)
 
-All images were taken from a cellphone camera.
+All images were taken from a cell phone camera.
 
 I moved the images to google drive in order to work with google colab (which enables to speed up the running time of the network with GPU).
 Then separated the data into train (106 images) and validation (21 images) and kept it in the “train” and “validation” folders. 
