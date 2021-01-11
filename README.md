@@ -6,7 +6,7 @@ My goal of this project is to create an accurate image classifier using images o
 in order to challenge myself and deal with real life data problems.
 
 ## Dataset 
-As mentioned, the dataset consists of images of clothes from my own closet: 50 Tops, 50 Bottems, 26 shoes (in the near future I will add more images).
+As mentioned, the dataset consists of images of clothes from my own closet: 50 Tops, 50 Bottoms, 26 shoes (in the near future I will add more images).
 Here's an example of some images (after resizing the images 244 * 244) :
 
 ![DeepFashionVGG16_presenting_imgs](<Evaluation_Images/DeepFashionVGG16_presenting_imgs.jpg>)
