@@ -46,7 +46,7 @@ The validation accuracy is: 0.98
 The validation loss is: 0.119
 
 
-If we take a look at the confusion matrix, we will find out that the only error is between bottem and top:
+If we take a look at the confusion matrix, we will find out that the only error is between bottom and top:
 
 ![Confusion_matrix](<Evaluation_Images/DeepFashionVGG16_confusion_matrix.jpg>)
 
